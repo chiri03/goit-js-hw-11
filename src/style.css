@@ -7,7 +7,7 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-color: #c3c1c1;
   color: #212121;
   line-height: 1.5;
 }
@@ -35,19 +35,24 @@ body {
 
 .photo-card {
   position: relative;
+  background-color: #fafafa;
+  padding: 2px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  
 }
 
-.card-image:hover {
-  transform: scale(1.03);
-}
+  .photo-card:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+    transform: scale(1.1);
+  }
 
 .card-image {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: transform var(--animation-duration) var(--timing-function);
+  
 }
 
 .photo-card-link {
@@ -70,6 +75,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: auto;
+  align-items: center;
 }
 
 
@@ -134,7 +140,6 @@ input {
   width: 400px;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-color: #2196f3;
   border-radius: 4px;
 }
 
@@ -151,4 +156,5 @@ input:hover {
 
 input[type='text'] {
   padding-left: 15px;
+  background-color: #fafafa;
 }
