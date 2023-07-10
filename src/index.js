@@ -21,20 +21,18 @@ async function searchImage(e) {
     AxiosApi.hits = 0;
 
     e.currentTarget.reset();
-
     const data = await AxiosApi.fetchImage();
 
     renderGallery(data);
-    loadMoreBtn.style.display = block;
-
+    loadMoreBtn.style.display = 'block';
     if (!data.hits.length) {
-      loadMoreBtn.style.display = none;
+      loadMoreBtn.style.display = 'none';
       return Notiflix.Notify.failure(
-        "Sorry, there are no images matching your search query. Please try again."
+        'Sorry, there are no images matching your search query. Please try again.'
       );
     }
     if (data.totalHits <= 41) {
-      loadMoreBtn.style.display = "none";
+      loadMoreBtn.style.display = 'none';
       return Notiflix.Notify.success(
         `Hooray! We found ${data.totalHits} images.`
       );
@@ -43,14 +41,13 @@ async function searchImage(e) {
         `Hooray! We found ${data.totalHits} images.`
       );
     }
-
   } catch (error) {
     console.log(error);
   }
 }
 
-function resetMarkup(){
-  gallery.innerHTML = "";
+function resetMarkup() {
+  gallery.innerHTML = '';
 }
 
 async function loadMoreImages(e) {
