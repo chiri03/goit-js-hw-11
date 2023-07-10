@@ -1,13 +1,13 @@
-// Descris în documentație
-import SimpleLightbox from 'simplelightbox';
-// Import suplimentar de stil
-import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const { height: cardHeight } = document
-  .querySelector('.gallery')
-  .firstElementChild.getBoundingClientRect();
+import Notiflix from 'notiflix';
+import axios from './axios';
+import { renderGallery } from './galery';
+const AxiosApi = new axios();
+const form = document.getElementById('search-form');
+const loadMoreBtn = document.querySelector('.load-more');
+const gallery = document.querySelector('.gallery');
+loadMoreBtn.style.display = 'none';
 
-window.scrollBy({
-  top: cardHeight * 2,
-  behavior: 'smooth',
-});
+loadMoreBtn.addEventListener('click', loadMoreImages);
+form.addEventListener('submit', searchImage);
+
